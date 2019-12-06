@@ -1,14 +1,11 @@
 nav.navbar.navbar-expand-lg.navbar-light.bg-light
 
-
-  a.pull-left.navbar-brand(href='/sales')
-    img.logo(src='/images/logo.png')
-
   button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
     span.navbar-toggler-icon
 
   #navbarSupportedContent.collapse.navbar-collapse
-    ul.navbar-nav.mr-auto
+  .container
+    ul.navbar-nav.mr-auto.navbar-left
       li.nav-item
         a.nav-link(href='/sales') Home
       li.nav-item
@@ -17,19 +14,19 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
         a.nav-link(href='/contact') Contact
       
       
+    ul.navbar-nav.mr-auto.navbar-right
       if isAuthenticated
         li.nav-item
           a.nav-link(href='/sales/new') New Sale
         
            
-   
         li.nav-item
          
           form.nav-destroy(action=`/logout`, method="POST")
            input.destroy(type="submit" style="color: rgba(0,0,0,0.5);", value="Logout")
 
-      if !isAuthenticated
-        
+      else
+
         li.nav-item.navbar-right
           a.nav-link(href='/authors/new') Register
         li.nav-item.navbar-right
