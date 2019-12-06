@@ -2,11 +2,11 @@ const router = require('express').Router();
 
 //controllers
 const PagesController = require('../controllers/pagesController')
-const SurveysController = require('../controllers/surveysController');
+const SalesController = require('../controllers/salesController');
 
 //routes
 router.get('/', PagesController.show);
-router.get('/new', SurveysController.new);
+router.get('/new', SalesController.new);
 router.get('/about', PagesController.show);
 router.get('/contact', PagesController.show);
 

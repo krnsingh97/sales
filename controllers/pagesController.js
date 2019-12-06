@@ -1,4 +1,4 @@
-const Survey = require('../models/survey');
+const Sale = require('../models/sale');
 exports.show = (req, res) => {
     const path = (req.path === '/') ? '/home' : req.path;
     
@@ -8,15 +8,15 @@ exports.show = (req, res) => {
 exports.new = (req, res) => {
     req.isAuthenticated();
   
-    Survey.find({})
-  .then(surveys => {
-    res.render('surveys/new', {
-      title: 'New Survey Post'
+    Sale.find({})
+  .then(sales => {
+    res.render('sales/new', {
+      title: 'New Sale Post'
     });
   })
   .catch(err => {
     req.flash('error', `ERROR: ${err}`);
-    res.redirect('/surveys');
+    res.redirect('/sales');
   });
     
   

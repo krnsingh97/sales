@@ -1,18 +1,18 @@
 extends ../layouts/main.pug
 
 block content
-  - title = "Survey Management"
+  - title = "Sale Management"
 
 block content
   .jumbotron.top.login
-    h1.display-3 Survey Management!
+    h1.display-3 Sale Management!
     p.lead
-      | This is a simple survey app which helps you to take surveys
+      | This is a simple sale app which helps you to post ad sales
     hr.my-4
     p 
-      | It uses your login credentials to create survey
+      | It uses your login credentials to create sale
     p.lead
-      a.btn.btn-dark.btn-lg(href='/surveys/new' role='button') Create Survey
+      a.btn.btn-dark.btn-lg(href='/sales/new' role='button') Create Sale
   .container
     header
       h1= title
@@ -21,22 +21,25 @@ block content
       table.table.table-striped
         thead
           tr
-            th Name
+            th Ad Title
+            th Ad Price
             th Actions
         
         tbody
-          each survey in surveys
+          each sale in sales
             tr
               td
-                a(href=`/surveys/${survey.id}`)= survey.name
+                a(href=`/sales/${sale.id}`)= sale.title
               td
-                a(href=`/surveys/${survey.id}/edit`) 
+                a(href=`/sales/${sale.id}`)= sale.price
+              td
+                a(href=`/sales/${sale.id}/edit`) 
                  button.btn.btn-outline-primary(type='button') Edit
 
                 = "  "
-                form.destroy(action="/surveys/destroy", method="POST", onsubmit='return confirm("Are you sure? You want to delete this Survey?");')
-                  input(type="hidden", name="id", value=survey.id)
+                form.destroy(action="/sales/destroy", method="POST", onsubmit='return confirm("Are you sure? You want to delete this Sale?");')
+                  input(type="hidden", name="id", value=sale.id)
                   button.btn.btn-outline-danger(type="submit", value="delete") Delete
                   
 
-      a(href='/surveys/new') New Survey
+      a(href='/sales/new') New Sale

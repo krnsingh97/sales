@@ -6,29 +6,20 @@ const mongoose = require('mongoose');
 // });
 
 // Our Schema
-const SurveySchema = new mongoose.Schema({
-  name: {
+const SaleSchema = new mongoose.Schema({
+  title: {
     type: String,
     required: true
   },
-  question: {
+  description: {
     type: String,
     required: true
   },
- 
-  choices: {
-    type: String,
-    enum: ['YES', 'NO'],
-    required: false
-  },
   
-  
-  status:
+  price:
    {
-     type: String, 
+     type: Number, 
      required: true, 
-     enum: ['Access', 'Denied'],
-     default: 'Access'
     },
 
   author: {
@@ -40,4 +31,4 @@ const SurveySchema = new mongoose.Schema({
   timestamps: true
 });
 
-module.exports = mongoose.model('Survey', SurveySchema);
+module.exports = mongoose.model('Sale', SaleSchema);

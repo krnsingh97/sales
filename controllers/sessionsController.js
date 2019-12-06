@@ -17,7 +17,7 @@ exports.authenticate = (req, res) => {
         if (isMatch) {
           req.session.userId = author.id;
           req.flash('success', 'You are logged in.');
-          res.redirect('/surveys');
+          res.redirect('/sales');
         } else {
           req.flash('error', `ERROR: Your credentials do not match.`);
           res.redirect('/login');
@@ -33,5 +33,5 @@ exports.authenticate = (req, res) => {
 exports.logout = (req, res) => {
   req.session.userId = null;
   req.flash('success', 'You are logged out');
-  res.redirect('/surveys');
+  res.redirect('/sales');
 };

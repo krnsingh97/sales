@@ -3,24 +3,13 @@ block content
   .container
    #int-form
   
-      label.h1 Questions
+      label.h1 Ad Sale
       div
-        p= survey.question
+        h1= sale.title
+        p= sale.description
+        
       
-        form(action=(survey ? "/surveys/update" : "/surveys"), method="POST")
-          if survey
-            input(type="hidden", name="id", value=survey.id)
-
-          .form-group
-            label Your Opinion
-            select.form-control(name="survey[choices]", required)
-              each choices in  ['YES', 'NO']
-                option(value=choices, selected=(survey && survey.choices === choices))
-                  = choices
-          
-          
-          .form-group
-            button.btn.btn-dark(type="submit") Submit
-      a(href='/surveys') Back to All Surveys
+       
+      a(href='/sales') Back to All Sales
               
-              
+            

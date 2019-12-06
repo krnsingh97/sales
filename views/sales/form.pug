@@ -1,25 +1,17 @@
-form.login(action=(survey ? "/surveys/update" : "/surveys"), method="POST")
-  if survey
-    input(type="hidden", name="id", value=survey.id)
+form.login(action=(sale ? "/sales/update" : "/sales"), method="POST")
+  if sale
+    input(type="hidden", name="id", value=sale.id)
 
   .form-group
-    label Name
-    input.form-control(name="survey[name]", required, value=(survey ? survey.name : null))
+    label AD Title
+    input.form-control(name="sale[title]", required, value=(sale ? sale.title : null))
 
   .form-group
-    label Question
-    input.form-control(name="survey[question]", required, value=(survey ? survey.question : null))
-
-   
-
-
+    label AD Description
+    input.form-control(name="sale[description]", required, value=(sale ? sale.description : null))
   .form-group
-    label Status
-    select.form-control(name="survey[status]", required)
-      each status in  ['Access', 'Denied']
-        option(value=status, selected=(survey && survey.status === status))
-          = status
-  
+    label AD Price
+    input.form-control(name="sale[price]", required, value=(sale ? sale.price : null))
   
   .form-group
     button.btn.btn-dark(type="submit") Submit

@@ -1,15 +1,15 @@
 const router = require('express').Router();
 
-const SurveysController = require('../controllers/surveysController');
+const SalesController = require('../controllers/salesController');
 
 //Begin routes
-router.get('/', SurveysController.index);
-router.get('/new', SurveysController.new);
-router.get('/:id', SurveysController.show);
-router.get('/:id/edit', SurveysController.edit);
-router.post('/', SurveysController.create);
-router.post('/update', SurveysController.update);
-router.post('/destroy', SurveysController.destroy);
+router.get('/', SalesController.index);
+router.get('/new', SalesController.new);
+router.get('/:id', SalesController.show);
+router.get('/:id/edit', SalesController.edit);
+router.post('/', SalesController.create);
+router.post('/update', SalesController.update);
+router.post('/destroy', SalesController.destroy);
 //End routes
 
 module.exports = router;

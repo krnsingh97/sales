@@ -1,55 +1,55 @@
-const Survey = require('../models/survey');
+const Sale = require('../models/sale');
 
 exports.index = (req, res) => {
  // req.isAuthenticated();
 
-  Survey.find({
+  Sale.find({
      // author: req.session.userId
     })
    // .populate('author')
-    .then(surveys => {
-      res.render('surveys/index', {
-        surveys: surveys,
-        title: 'All Surveys'
+    .then(sales => {
+      res.render('sales/index', {
+        sales: sales,
+        title: 'All Sales'
       });
     })
     .catch(err => {
       req.flash('error', `ERROR: ${err}`);
-      res.redirect('/surveys');
+      res.redirect('/sales');
     });
 };
 
 exports.show = (req, res) => {
  
 
-  Survey.findOne({
+  Sale.findOne({
       _id: req.params.id,
       
     })
-    .then(survey => {
-      res.render('surveys/show', {
-        survey: survey,
-        title: survey.name
+    .then(sale => {
+      res.render('sales/show', {
+        sale: sale,
+        title: sale.name
       });
     })
     .catch(err => {
       req.flash('error', `ERROR: ${err}`);
-      res.redirect('/surveys');
+      res.redirect('/sales');
     });
 };
 
 exports.new = (req, res) => {
   req.isAuthenticated();
 
-  Survey.find({})
-.then(surveys => {
-  res.render('surveys/new', {
-    title: 'New Survey Post'
+  Sale.find({})
+.then(sales => {
+  res.render('sales/new', {
+    title: 'New Sale Post'
   });
 })
 .catch(err => {
   req.flash('error', `ERROR: ${err}`);
-  res.redirect('/surveys');
+  res.redirect('/sales');
 });
   
 
@@ -58,61 +58,61 @@ exports.new = (req, res) => {
 exports.edit = (req, res) => {
   req.isAuthenticated();
 
-  Survey.findOne({
+  Sale.findOne({
       _id: req.params.id,
       author: req.session.userId
     })
-    .then(survey => {
-      res.render('surveys/edit', {
-        survey: survey,
-        title: survey.name
+    .then(sale => {
+      res.render('sales/edit', {
+        sale: sale,
+        title: sale.name
       });
     })
     .catch(err => {
       req.flash('error', `ERROR: ${err}`);
-      res.redirect('/surveys');
+      res.redirect('/sales');
     });
 };
 
 exports.create = (req, res) => {
   req.isAuthenticated();
 
-  req.body.survey.author = req.session.userId;
-  Survey.create(req.body.survey)
+  req.body.sale.author = req.session.userId;
+  Sale.create(req.body.sale)
     .then(() => {
-      req.flash('success', 'New survey was created successfully.');
-      res.redirect('/surveys');
+      req.flash('success', 'New sale was created successfully.');
+      res.redirect('/sales');
     })
     .catch(err => {
       req.flash('error', `ERROR: ${err}`);
-      res.redirect('/surveys/new');
+      res.redirect('/sales/new');
     });
 };
 
 exports.update = (req, res) => {
 
 
-  Survey.updateOne({
+  Sale.updateOne({
       _id: req.body.id,
-    }, req.body.survey, {
+    }, req.body.sale, {
       runValidators: true
     })
     .then(() => {
-      req.flash('success', 'The survey was updated successfully.');
-      res.redirect(`/surveys/${req.body.id}`);
+      req.flash('success', 'The sale was updated successfully.');
+      res.redirect(`/sales/${req.body.id}`);
     })
     .catch(err => {
       req.flash('error', `ERROR: ${err}`);
-      res.redirect(`/surveys/${req.body.id}/edit`);
+      res.redirect(`/sales/${req.body.id}/edit`);
     });
 };
 
 exports.destroy = (req, res) => {
-  Survey.deleteOne({
+  Sale.deleteOne({
     _id: req.body.id
   })
   .then(() => {
-    res.redirect('/surveys');
+    res.redirect('/sales');
   })
   .catch(err => {
     console.error(`ERROR: ${err}`);
@@ -122,16 +122,16 @@ exports.destroy = (req, res) => {
 exports.destroy = (req, res) => {
   req.isAuthenticated();
 
-  Survey.deleteOne({
+  Sale.deleteOne({
       _id: req.body.id,
       author: req.session.userId
     })
     .then(() => {
-      req.flash('success', 'The survey was deleted successfully.');
-      res.redirect('/surveys');
+      req.flash('success', 'The sale was deleted successfully.');
+      res.redirect('/sales');
     })
     .catch(err => {
       req.flash('error', `ERROR: ${err}`);
-      res.redirect(`/surveys`);
+      res.redirect(`/sales`);
     });
 };
