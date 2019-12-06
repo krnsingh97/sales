@@ -1,4 +1,4 @@
-nav.navbar.navbar-expand-lg.navbar-light.bg-light
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
 
   button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
     span.navbar-toggler-icon
@@ -17,13 +17,15 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
     ul.navbar-nav.mr-auto.navbar-right
       if isAuthenticated
         li.nav-item
+          span
+            .glyphicon.glyphicon-print
+
           a.nav-link(href='/sales/new') New Sale
         
            
         li.nav-item
-         
           form.nav-destroy(action=`/logout`, method="POST")
-           input.destroy(type="submit" style="color: rgba(0,0,0,0.5);", value="Logout")
+           input.destroy(type="submit" style="font-size: 15px; color: rgba(255,255,255,0.5);;", value="LOG OUT")
 
       else
 

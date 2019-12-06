@@ -505,11 +505,12 @@ img {
 }
 
 .jumbotron{
-  padding: 50px;
+  padding: 40px;
   background: url('/images/background.jpg');
   background-size:cover;
   color: #E0F7FA;
-  
+  background-attachment: fixed;
+  font-size: 20px;
 }
 
 .top{
