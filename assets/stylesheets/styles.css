@@ -1,0 +1,518 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+
+
+.logo{
+  width: 40px;
+  margin-bottom: -5px;
+  overflow: hidden;
+}
+.back{
+  width: 100%;
+  height: 100%;
+}
+#body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: whitesmoke;
+}
+
+#header {
+
+  height: 150px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-family: Montserrat;
+  text-align: center;
+  position: relative;
+  top: 0px; left: 0px;
+  z-index: 1;
+
+  
+ 
+}
+
+#title {
+  height: 100px;
+  width: 100%;
+  font-family: Montserrat;
+  text-align: center;
+  
+  font-size: 30px;
+  font-style: bold;
+  
+}
+
+ 
+#image-links img {
+  height: 150px;
+  width: 150px;
+  margin-top: 50px;
+  margin-left: 270px;
+}
+
+
+
+#table {
+  width: 300px;
+  margin-top: 70px;
+  margin-left: 540px;
+  padding: 15px;
+  text-align: center;
+  border-collapse: collapse;
+  border: 5px solid gray;
+}
+  
+#help-box {
+  height: 50px;
+  width: 80px;
+  text-align: center;
+  background-color: #000;
+  color: #E0F7FA;
+  font-family: Montserrat;
+  position: fixed;
+  bottom: 5%;
+  right: 0px; 
+}
+
+#footer {
+  height: 50px;
+  border-top: solid 1px #000;
+  background-color: #000;
+  text-align: center;
+  color: white;
+  font-family: Montserrat;   
+}
+.button {
+  background-color: black;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#backToHome{
+  margin: 4px 2px;
+  text-decoration: none;
+  color: black;
+  
+  display: inline-block;
+ 
+  padding: 0 3px;
+  box-sizing: border-box;
+}
+#backToHome:hover{
+ 
+  border: none;
+  box-shadow: inset 0 -55px 0 0 black;
+  color: #fff;
+}
+
+.row{
+
+display: flex;
+justify-content: center;
+align-content:space-between;
+margin-left: 30px;
+
+}
+
+
+.col-2{
+  margin-left:460px;
+  order: 1;
+}
+
+.link :hover{
+color: white;
+
+}
+
+.destroy {
+  display: inline;
+  color: white;
+}
+
+.destroy>input[type="submit"] {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: white;
+}
+
+.destroy:hover>input[type="submit"] {
+  text-decoration: underline;
+  color: white;
+}
+
+
+.nav-destroy>input[type="submit"] {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: white;
+  display: block;
+  padding: .5rem 0.5rem;
+}
+
+@media (min-width: 992px) .nav-destroy>input[type="submit"] {
+  padding-right: .5rem;
+  padding-left: .5rem;
+}
+
+.nav-destroy:hover>input[type="submit"] {
+  color: white;
+}
+html,
+body,
+.App,
+#root {
+  height: 100%;
+  width: 100%;
+}
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Photo by Marco Molitor on Unsplash */
+
+
+
+.home-cta {
+  background: url('/images/background.jpg');
+  background-size:cover;
+  height: 50%;
+  width: 50%;
+  opacity: 1px;
+  justify-content: center;
+  align-items: center;
+  margin-top: -60px;
+}
+
+.home-cta>h1 {
+  color: #fff;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  font-size: 5rem;
+}
+
+.content {
+  margin-top: 60px;
+}
+
+.destroy {
+  display: inline;
+}
+
+.destroy>input[type="submit"] {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: #007bff;
+}
+
+.destroy:hover>input[type="submit"] {
+  text-decoration: underline;
+}
+
+.container,
+.flash {
+  margin-top: 0px;
+
+}
+
+.nav-destroy>input[type="submit"] {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: (255,255,255,0.5);
+  display: block;
+  padding: .5rem 0.5rem;
+}
+
+@media (min-width: 992px) .nav-destroy>input[type="submit"] {
+  padding-right: .5rem;
+  padding-left: .5rem;
+}
+
+.nav-destroy:hover>input[type="submit"] {
+  color:red;
+}
+
+
+.card {
+  margin: auto;
+  width: 40%;
+  /* shadow to give it the floating card effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07);
+  transition: 0.25s;
+}
+
+/* hover effect on card makes shadow larger */
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.07);
+}
+
+img {
+  width: 100%;
+  /* border-radius: 5px 5px 0 0; */
+}
+
+.container2 {
+  padding: 2px 18px;
+  width: 100px;
+}
+#navy{
+  color: #000;
+}
+.container4 {
+  background: url('images/background.jpg');
+  overflow: hidden;
+  animation: color 1.5s ease infinite 20;
+}
+
+.ball {
+
+  position: absolute;
+  
+  right: 10px;
+	left: 10px; 
+	top: 10px;
+  bottom: 10px;
+	background-color: white;
+	
+	
+	
+	animation: size 2s alternate-reverse 10;
+}
+
+@keyframes size {
+	0% {transform: scale(0);}
+	50% {transform: scale(50%);}
+	100% {transform: scale(100%);}
+}
+
+@keyframes color {
+	0% {background-color: white;}
+	50% {background-color: black;}
+	100% {background-color: white}
+}
+
+.box-position {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -200px;
+  margin-left: -200px;
+  width: 400px;
+  height: 400px;
+  /*background-color: red;*/
+}
+
+.container3 {
+	width: 345px;
+	height: 25px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+  margin-left: -170px;
+}
+
+.pre {
+	padding: 5px;
+	font-family: "Montserrat", serif;
+	text-transform: uppercase;
+	text-align: right;
+	font-size: 1.3em;
+  background-color: white;
+  display: block;
+  width: 245px;
+  position: relative;
+  color: black;
+  
+}
+
+.wrapper {
+	position: absolute;
+  float: right;
+  width: 85px;
+  height: 38px;
+	top: 0;
+	left: 252px;
+	overflow: hidden;
+  background-color: black;
+  border-right: 2px solid white;
+}
+
+
+
+.rotator {
+  width: 80px;
+	height: 400px;
+	position: absolute;
+	top: -44px;
+	left: 0;
+	/*animation: scroll 3s ease
+	infinite;*/
+  
+  animation: slide 2s alternate 1;
+	background-color: black;
+	color: white;
+  
+}
+
+@keyframes slide {
+  0% {transform: translate(-100px);}
+  100% {transform: translate(0);}
+}
+
+@keyframes scroll {
+	0% {transform: translateY(0);}
+	50% {transform: translateY(-50%);}
+	100% {transform: translateY(-92%);}
+}
+
+.element {
+	font-family: "Montserrat", serif;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 1.3em;
+	/*background-color: red;*/
+	margin-top: 50px;
+  padding-left: 0;
+}
+
+
+
+
+	  /*------------- footer -------------*/
+footer {
+	padding: 0;
+	margin-left: -120px;
+	width: 250px;
+	position: absolute;
+	top: 85%;
+	left: 50%;
+	color: white;	
+	text-align: center;
+  cursor: default;
+	/*background-color: yellow;*/
+}
+
+.first {
+  margin: 0;
+  padding: 0;
+  width: 250px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: fcolor 1s ease 1;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  /*background-color: red;*/
+}
+
+@keyframes fcolor {
+  from {text-color: black;}
+  to {text-color: white;}
+}
+
+#heart {
+   color: white;
+   position: absolute;
+  cursor: none;
+   top: -2px;
+   left: 87%;
+}
+#heart:hover {
+	color: red;
+}
+.parallax{
+
+
+
+  /* The image used */
+  background: url('images/background.jpg');
+
+  /* Full height */
+  height: 100%; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.card {
+  margin: auto;
+  width: 20%;
+  /* shadow to give it the floating card effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.07);
+  transition: 0.25s;
+}
+
+/* hover effect on card makes shadow larger */
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.07);
+}
+
+img {
+  width: 100%;
+  /* border-radius: 5px 5px 0 0; */
+}
+#int-form{
+  max-width: 500px;
+  margin: 100px auto;
+  position: relative;
+}
+.login{
+  background: #fff;
+  padding: 50px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.14), 0 4px 8px rgba(0,0,0,0.28);
+}
+
+
+.login input[type="text"],.login input[type="password"]{
+  border: none;
+  background: transparent;
+  height: 45px;
+  width: 100%;
+  margin-top: 30px;
+}
+.login input:hover,.login input:focus{
+  outline: none;
+}
+
+
+.login > div.trans:after,.register > div.trans:after, .login > div:before,.register > div:before{
+  width: 100%;
+  left: 0;
+}
+
+.jumbotron{
+  padding: 50px;
+  background: url('/images/background.jpg');
+  background-size:cover;
+  color: #E0F7FA;
+  
+}
+
+.top{
+  margin-top: -20px;
+}
+

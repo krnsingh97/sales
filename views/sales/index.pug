@@ -1,0 +1,42 @@
+extends ../layouts/main.pug
+
+block content
+  - title = "Survey Management"
+
+block content
+  .jumbotron.top.login
+    h1.display-3 Survey Management!
+    p.lead
+      | This is a simple survey app which helps you to take surveys
+    hr.my-4
+    p 
+      | It uses your login credentials to create survey
+    p.lead
+      a.btn.btn-dark.btn-lg(href='/surveys/new' role='button') Create Survey
+  .container
+    header
+      h1= title
+
+    div
+      table.table.table-striped
+        thead
+          tr
+            th Name
+            th Actions
+        
+        tbody
+          each survey in surveys
+            tr
+              td
+                a(href=`/surveys/${survey.id}`)= survey.name
+              td
+                a(href=`/surveys/${survey.id}/edit`) 
+                 button.btn.btn-outline-primary(type='button') Edit
+
+                = "  "
+                form.destroy(action="/surveys/destroy", method="POST", onsubmit='return confirm("Are you sure? You want to delete this Survey?");')
+                  input(type="hidden", name="id", value=survey.id)
+                  button.btn.btn-outline-danger(type="submit", value="delete") Delete
+                  
+
+      a(href='/surveys/new') New Survey

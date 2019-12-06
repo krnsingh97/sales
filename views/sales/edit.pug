@@ -1,0 +1,14 @@
+extends ../layouts/main.pug
+
+block content
+  .container
+    header
+      h1= `Edit ${survey.name}`
+    
+block content
+  .container
+    header
+      h1 Edit Survey
+
+    div
+      include ./form.pug

@@ -1,0 +1,25 @@
+form.login(action=(survey ? "/surveys/update" : "/surveys"), method="POST")
+  if survey
+    input(type="hidden", name="id", value=survey.id)
+
+  .form-group
+    label Name
+    input.form-control(name="survey[name]", required, value=(survey ? survey.name : null))
+
+  .form-group
+    label Question
+    input.form-control(name="survey[question]", required, value=(survey ? survey.question : null))
+
+   
+
+
+  .form-group
+    label Status
+    select.form-control(name="survey[status]", required)
+      each status in  ['Access', 'Denied']
+        option(value=status, selected=(survey && survey.status === status))
+          = status
+  
+  
+  .form-group
+    button.btn.btn-dark(type="submit") Submit
